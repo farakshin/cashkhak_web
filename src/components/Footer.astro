@@ -1,0 +1,27 @@
+---
+interface Props { lang: "ru" | "en"; }
+import { withBase } from "../lib/paths";
+const { lang } = Astro.props;
+---
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div>
+      <a class="brand footer-brand" href={withBase(lang === "ru" ? "/" : "/en/")}>
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>кэшхак</span>
+      </a>
+      <p class="footer-note">
+        {lang === "ru" ? "Кэшбэк всех карт под рукой." : "Cashback from every card, at hand."}
+      </p>
+    </div>
+    <div class="footer-links">
+      <a href={withBase(lang === "ru" ? "/faq/" : "/en/faq/")}>{lang === "ru" ? "Вопросы и ответы" : "FAQ"}</a>
+      <a href={withBase(lang === "ru" ? "/support/" : "/en/support/")}>{lang === "ru" ? "Поддержка" : "Support"}</a>
+      <a href={withBase(lang === "ru" ? "/privacy/" : "/en/privacy/")}>{lang === "ru" ? "Конфиденциальность" : "Privacy"}</a>
+    </div>
+    <div class="footer-meta">
+      <a href="mailto:support@cashkhak.app">support@cashkhak.app</a>
+      <span>© 2026 Cashkhak</span>
+    </div>
+  </div>
+</footer>

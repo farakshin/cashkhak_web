@@ -1,0 +1,70 @@
+---
+import Layout from "../components/Layout.astro";
+import PhonePreview from "../components/PhonePreview.astro";
+import FeatureCard from "../components/FeatureCard.astro";
+import FaqList from "../components/FaqList.astro";
+import { features, faq } from "../data/site";
+import { withBase } from "../lib/paths";
+---
+<Layout currentPath="/">
+  <section class="hero section-shell">
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> Умный справочник кэшбэка</p>
+        <h1>Платите<br /><em>выгоднее.</em></h1>
+        <p class="hero-lede">Кэшхак помнит, какая карта принесёт больше кэшбэка в этом месяце. Вам остаётся только выбрать её.</p>
+        <div class="hero-actions" id="download">
+          <a class="button button-dark" href="#download">Скоро в App Store <span>↗</span></a>
+          <a class="text-link" href="#how-it-works">Как это работает <span>↓</span></a>
+        </div>
+        <div class="hero-footnote"><span class="tiny-lock">⌁</span> Без регистрации · данные хранятся на устройстве</div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-orbit orbit-one"></div>
+        <div class="hero-orbit orbit-two"></div>
+        <div class="floating-note floating-note-top"><span>Март 2026</span><strong>+ до 5%</strong></div>
+        <PhonePreview />
+        <div class="floating-note floating-note-bottom"><span class="note-check">✓</span><span>Карта выбрана</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ticker" aria-label="Возможности Кэшхака">
+    <div class="ticker-track"><span>КАРТЫ</span><i>✦</i><span>КАТЕГОРИИ</span><i>✦</i><span>ВИДЖЕТ</span><i>✦</i><span>БЕЗ РЕГИСТРАЦИИ</span><i>✦</i><span>КАРТЫ</span><i>✦</i><span>КАТЕГОРИИ</span></div>
+  </section>
+
+  <section class="section-shell intro-section" id="how-it-works">
+    <div class="shell intro-grid">
+      <p class="section-kicker">Зачем он нужен</p>
+      <div>
+        <h2>Никаких догадок<br />у кассы.</h2>
+        <p class="section-lede">Банки меняют категории каждый месяц. Кэшхак собирает всё в одном месте и показывает нужную карту в нужный момент.</p>
+        <a class="text-link text-link-dark" href={withBase("/faq/")}>Узнать больше <span>↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell features-section">
+    <div class="shell">
+      <div class="section-heading-row"><div><p class="section-kicker">Всё, что важно</p><h2>Ваши карты.<br /><em>Ваши правила.</em></h2></div><span class="section-index">01 — 04</span></div>
+      <div class="feature-grid">
+        {features.map((feature) => <FeatureCard {...feature} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell showcase-section">
+    <div class="shell showcase-grid">
+      <div class="showcase-copy"><p class="section-kicker">Меньше ручной работы</p><h2>Скриншот.<br /><em>Готово.</em></h2><p class="section-lede">Выберите экран с условиями кэшбэка в банковском приложении. Кэшхак найдёт категории и проценты, а вы проверите результат одним взглядом.</p><div class="recognition-list"><span><b>01</b> Выберите снимок</span><span><b>02</b> Проверьте категории</span><span><b>03</b> Получайте выгоду</span></div></div>
+      <div class="scan-art" aria-hidden="true"><div class="scan-card"><div class="scan-top"><span>Кэшбэк месяца</span><span>•••</span></div><div class="scan-title">Ваши категории</div><div class="scan-row"><span>Рестораны</span><b>5%</b></div><div class="scan-row"><span>Транспорт</span><b>3%</b></div><div class="scan-row"><span>Аптеки</span><b>4%</b></div><div class="scan-line"></div><div class="scan-row faded"><span>Выбрано автоматически</span><span>✓</span></div></div><div class="scan-beam"></div><span class="scan-label">распознавание</span></div>
+    </div>
+  </section>
+
+  <section class="section-shell privacy-section">
+    <div class="shell privacy-band"><div class="privacy-symbol">⌁</div><div><p class="section-kicker">Ваши данные — ваши</p><h2>Локально.<br /><em>Спокойно.</em></h2><p>Без аккаунтов, серверов и скрытого трекинга. Кэшхак создан как личный инструмент, а не как ещё один сервис, который знает о вас всё.</p></div><a class="button button-light" href={withBase("/privacy/")}>О конфиденциальности <span>↗</span></a></div>
+  </section>
+
+  <section class="section-shell faq-preview"><div class="shell narrow-shell"><div class="section-heading-row"><div><p class="section-kicker">Частые вопросы</p><h2>Есть вопрос?</h2></div><a class="text-link text-link-dark" href={withBase("/faq/")}>Все вопросы <span>↗</span></a></div><FaqList items={faq.slice(0, 3)} /></div></section>
+
+  <section class="section-shell final-cta" id="download"><div class="shell final-cta-inner"><p class="eyebrow"><span class="eyebrow-dot"></span> Кэшхак для iPhone</p><h2>Выбирайте карту<br /><em>с умом.</em></h2><p>Скоро в App Store. А пока — сохраните страницу, чтобы не пропустить запуск.</p><a class="button button-light" href="mailto:support@cashkhak.app?subject=Запуск%20Кэшхака">Напомнить о запуске <span>↗</span></a></div></section>
+</Layout>

@@ -1,0 +1,36 @@
+---
+import { nav } from "../data/site";
+import { withBase } from "../lib/paths";
+
+interface Props {
+  lang: "ru" | "en";
+  currentPath: string;
+}
+
+const { lang, currentPath } = Astro.props;
+const items = nav[lang];
+const homeHref = withBase(lang === "ru" ? "/" : "/en/");
+const languagePath = lang === "ru"
+  ? (currentPath === "/" ? "/en/" : `/en${currentPath}`)
+  : (currentPath === "/en/" ? "/" : currentPath.replace(/^\/en/, "") || "/");
+const languageHref = withBase(languagePath);
+---
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href={homeHref} aria-label="Кэшхак — на главную">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span>кэшхак</span>
+    </a>
+    <nav class="desktop-nav" aria-label={lang === "ru" ? "Основная навигация" : "Main navigation"}>
+      {items.map((item) => (
+        <a class:list={[{ active: currentPath === item.href }, "nav-link"]} href={withBase(item.href)}>{item.label}</a>
+      ))}
+    </nav>
+    <div class="header-actions">
+      <a class="language-link" href={languageHref}>{lang === "ru" ? "EN" : "RU"}</a>
+      <a class="button button-small button-dark header-cta" href={withBase(lang === "ru" ? "/#download" : "/en/#download")}>
+        {lang === "ru" ? "Скоро в App Store" : "Coming to App Store"}
+      </a>
+    </div>
+  </div>
+</header>

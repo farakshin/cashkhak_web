@@ -1,0 +1,28 @@
+---
+interface Props { compact?: boolean; }
+const { compact = false } = Astro.props;
+---
+<div class:list={["phone-frame", { compact }]} aria-label="Предпросмотр приложения Кэшхак">
+  <div class="phone-island"></div>
+  <div class="phone-screen">
+    <div class="phone-status"><span>9:41</span><span>⌁ ◉ ▰</span></div>
+    <div class="phone-nav"><strong>Мои карты</strong><span>＋</span></div>
+    <div class="phone-month"><span>‹</span><strong>Март 2026</strong><span>›</span></div>
+    <div class="phone-card phone-card-blue">
+      <div class="phone-card-top"><span class="bank-logo">т</span><span class="phone-percent">5%</span></div>
+      <strong>Т-Банк</strong>
+      <div class="phone-tags"><span>Рестораны</span><span>АЗС</span><span>Такси</span></div>
+    </div>
+    <div class="phone-card phone-card-red">
+      <div class="phone-card-top"><span class="bank-logo">а</span><span class="phone-percent">4%</span></div>
+      <strong>Альфа-Банк</strong>
+      <div class="phone-tags"><span>Аптеки</span><span>Супермаркеты</span></div>
+    </div>
+    <div class="phone-card phone-card-green">
+      <div class="phone-card-top"><span class="bank-logo">с</span><span class="phone-percent">3%</span></div>
+      <strong>Сбер</strong>
+      <div class="phone-tags"><span>Транспорт</span><span>Кино</span></div>
+    </div>
+    <div class="phone-tabbar"><span class="selected">▦<small>Карты</small></span><span>⌕<small>Справочник MCC</small></span></div>
+  </div>
+</div>
