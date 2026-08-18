@@ -1,8 +1,7 @@
 export const site = {
   name: "Кэшхак",
   shortName: "Кэшхак",
-  description:
-    "Умный справочник кэшбэка по банковским картам. Все категории, проценты и виджет — под рукой.",
+  description: "Кэшхак — Кэшбэк по всем картам",
   supportEmail: "farakshin@gmail.com",
   appStoreUrl: "#download"
 };
