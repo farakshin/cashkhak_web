@@ -7,7 +7,7 @@ const { lang } = Astro.props;
   <div class="shell footer-grid">
     <div>
       <a class="brand footer-brand" href={withBase(lang === "ru" ? "/" : "/en/")}>
-        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <img class="brand-icon" src={withBase("/cashkhak-app-icon.png")} width="30" height="30" alt="" />
         <span>кэшхак</span>
       </a>
       <p class="footer-note">

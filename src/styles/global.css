@@ -27,10 +27,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .site-header { position: relative; z-index: 10; padding: 18px 0; border-bottom: 1px solid rgba(226,232,240,.72); background: rgba(248,250,252,.88); backdrop-filter: blur(18px); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 20px; letter-spacing: -.06em; }
-.brand-mark { position: relative; display: inline-flex; align-items: end; gap: 3px; width: 30px; height: 30px; padding: 7px; overflow: hidden; border-radius: 10px; background: linear-gradient(145deg, #60a5fa, #2563eb 58%, #1d4ed8); box-shadow: 0 5px 12px rgba(37,99,235,.28); }
-.brand-mark::before { position: absolute; inset: 5px; border: 1px solid rgba(255,255,255,.34); border-radius: 6px; content: ""; }
-.brand-mark span { position: relative; z-index: 1; display: block; width: 4px; height: 10px; border-radius: 8px; background: #fff; }
-.brand-mark span:nth-child(2) { height: 15px; }.brand-mark span:nth-child(3) { height: 7px; }
+.brand-icon { display: block; width: 30px; height: 30px; border-radius: 9px; box-shadow: 0 5px 12px rgba(37,99,235,.24); }
 .desktop-nav { display: flex; gap: 30px; margin-left: auto; margin-right: auto; }
 .nav-link, .language-link { color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: -.02em; transition: color .2s ease; }
 .nav-link:hover, .nav-link.active, .language-link:hover { color: var(--ink); }
