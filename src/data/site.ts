@@ -3,7 +3,7 @@ export const site = {
   shortName: "Кэшхак",
   description:
     "Умный справочник кэшбэка по банковским картам. Все категории, проценты и виджет — под рукой.",
-  supportEmail: "support@cashkhak.app",
+  supportEmail: "farakshin@gmail.com",
   appStoreUrl: "#download"
 };
 
@@ -93,7 +93,7 @@ export const privacySections = [
   {
     title: "Контакты",
     paragraphs: [
-      "Если у вас есть вопрос о конфиденциальности, напишите на support@cashkhak.app."
+      "Если у вас есть вопрос о конфиденциальности, напишите на farakshin@gmail.com."
     ]
   }
 ];

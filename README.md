@@ -31,7 +31,7 @@ npm run preview
 BASE_PATH=/cashkhak_web npm run build
 ```
 
-Адрес сайта задаётся через `SITE_URL`. Контактный адрес `support@cashkhak.app` — временная заглушка до выбора рабочего адреса поддержки.
+Адрес сайта задаётся через `SITE_URL`. Адрес поддержки: `farakshin@gmail.com`.
 
 ## GitHub Pages
 

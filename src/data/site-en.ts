@@ -65,6 +65,6 @@ export const privacySectionsEn = [
   },
   {
     title: "Contact",
-    paragraphs: ["For privacy questions, email support@cashkhak.app."]
+    paragraphs: ["For privacy questions, email farakshin@gmail.com."]
   }
 ];
