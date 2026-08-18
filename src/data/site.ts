@@ -10,13 +10,13 @@ export const site = {
 export const nav = {
   ru: [
     { href: "/", label: "Возможности" },
-    { href: "/faq/", label: "Вопросы" },
-    { href: "/support/", label: "Поддержка" }
+    { href: "/faq.html", label: "Вопросы" },
+    { href: "/support.html", label: "Поддержка" }
   ],
   en: [
     { href: "/en/", label: "Features" },
-    { href: "/en/faq/", label: "FAQ" },
-    { href: "/en/support/", label: "Support" }
+    { href: "/en/faq.html", label: "FAQ" },
+    { href: "/en/support.html", label: "Support" }
   ]
 };
 

@@ -15,9 +15,9 @@ const { lang } = Astro.props;
       </p>
     </div>
     <div class="footer-links">
-      <a href={withBase(lang === "ru" ? "/faq/" : "/en/faq/")}>{lang === "ru" ? "Вопросы и ответы" : "FAQ"}</a>
-      <a href={withBase(lang === "ru" ? "/support/" : "/en/support/")}>{lang === "ru" ? "Поддержка" : "Support"}</a>
-      <a href={withBase(lang === "ru" ? "/privacy/" : "/en/privacy/")}>{lang === "ru" ? "Конфиденциальность" : "Privacy"}</a>
+      <a href={withBase(lang === "ru" ? "/faq.html" : "/en/faq.html")}>{lang === "ru" ? "Вопросы и ответы" : "FAQ"}</a>
+      <a href={withBase(lang === "ru" ? "/support.html" : "/en/support.html")}>{lang === "ru" ? "Поддержка" : "Support"}</a>
+      <a href={withBase(lang === "ru" ? "/privacy.html" : "/en/privacy.html")}>{lang === "ru" ? "Конфиденциальность" : "Privacy"}</a>
     </div>
     <div class="footer-meta">
       <a href="mailto:support@cashkhak.app">support@cashkhak.app</a>

@@ -39,7 +39,7 @@ import { withBase } from "../lib/paths";
       <div>
         <h2>Никаких догадок<br />у кассы.</h2>
         <p class="section-lede">Банки меняют категории каждый месяц. Кэшхак собирает всё в одном месте и показывает нужную карту в нужный момент.</p>
-        <a class="text-link text-link-dark" href={withBase("/faq/")}>Узнать больше <span>↗</span></a>
+        <a class="text-link text-link-dark" href={withBase("/faq.html")}>Узнать больше <span>↗</span></a>
       </div>
     </div>
   </section>
@@ -61,10 +61,10 @@ import { withBase } from "../lib/paths";
   </section>
 
   <section class="section-shell privacy-section">
-    <div class="shell privacy-band"><div class="privacy-symbol">⌁</div><div><p class="section-kicker">Ваши данные — ваши</p><h2>Локально.<br /><em>Спокойно.</em></h2><p>Без аккаунтов, серверов и скрытого трекинга. Кэшхак создан как личный инструмент, а не как ещё один сервис, который знает о вас всё.</p></div><a class="button button-light" href={withBase("/privacy/")}>О конфиденциальности <span>↗</span></a></div>
+    <div class="shell privacy-band"><div class="privacy-symbol">⌁</div><div><p class="section-kicker">Ваши данные — ваши</p><h2>Локально.<br /><em>Спокойно.</em></h2><p>Без аккаунтов, серверов и скрытого трекинга. Кэшхак создан как личный инструмент, а не как ещё один сервис, который знает о вас всё.</p></div><a class="button button-light" href={withBase("/privacy.html")}>О конфиденциальности <span>↗</span></a></div>
   </section>
 
-  <section class="section-shell faq-preview"><div class="shell narrow-shell"><div class="section-heading-row"><div><p class="section-kicker">Частые вопросы</p><h2>Есть вопрос?</h2></div><a class="text-link text-link-dark" href={withBase("/faq/")}>Все вопросы <span>↗</span></a></div><FaqList items={faq.slice(0, 3)} /></div></section>
+  <section class="section-shell faq-preview"><div class="shell narrow-shell"><div class="section-heading-row"><div><p class="section-kicker">Частые вопросы</p><h2>Есть вопрос?</h2></div><a class="text-link text-link-dark" href={withBase("/faq.html")}>Все вопросы <span>↗</span></a></div><FaqList items={faq.slice(0, 3)} /></div></section>
 
   <section class="section-shell final-cta" id="download"><div class="shell final-cta-inner"><p class="eyebrow"><span class="eyebrow-dot"></span> Кэшхак для iPhone</p><h2>Выбирайте карту<br /><em>с умом.</em></h2><p>Скоро в App Store. А пока — сохраните страницу, чтобы не пропустить запуск.</p><a class="button button-light" href="mailto:support@cashkhak.app?subject=Запуск%20Кэшхака">Напомнить о запуске <span>↗</span></a></div></section>
 </Layout>

@@ -2,7 +2,7 @@
 import Layout from "../components/Layout.astro";
 import { privacySections } from "../data/site";
 ---
-<Layout title="Политика конфиденциальности" currentPath="/privacy/">
+<Layout title="Политика конфиденциальности" currentPath="/privacy.html">
   <section class="page-hero section-shell"><div class="shell narrow-shell"><p class="eyebrow"><span class="eyebrow-dot"></span> Кэшхак</p><h1>Политика<br /><em>конфиденциальности.</em></h1><p class="page-lede">Последнее обновление: 18 августа 2026 года</p></div></section>
   <section class="section-shell page-content"><div class="shell legal-shell"><p class="legal-intro">Кэшхак создан как локальный инструмент для личного учёта категорий кэшбэка. Мы стараемся собирать как можно меньше данных — в идеале не собирать их вовсе.</p>{privacySections.map((section, index) => <section class="legal-section"><span class="legal-number">0{index + 1}</span><div><h2>{section.title}</h2>{section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</div></section>)}</div></section>
 </Layout>

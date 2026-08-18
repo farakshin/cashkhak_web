@@ -23,12 +23,18 @@ npm run build
 npm run preview
 ```
 
-Русская версия — корень сайта (`/`), английская — `/en/`. Доступны страницы `/faq/`, `/support/` и `/privacy/` и их английские версии.
+Русская версия — корень сайта (`/`), английская — `/en/`. Доступны страницы `/faq.html`, `/support.html` и `/privacy.html` и их английские версии.
 
 Для GitHub Pages проектный путь задаётся переменной `BASE_PATH`, например:
 
 ```bash
-BASE_PATH=/cashkhak npm run build
+BASE_PATH=/cashkhak_web npm run build
 ```
 
 Адрес сайта задаётся через `SITE_URL`. Контактный адрес `support@cashkhak.app` — временная заглушка до выбора рабочего адреса поддержки.
+
+## GitHub Pages
+
+После push в `main` workflow `.github/workflows/deploy.yml` собирает сайт и публикует результат в ветку `gh-pages`.
+В настройках репозитория откройте **Settings → Pages** и выберите источник **Deploy from a branch**, ветку `gh-pages` и папку `/(root)`.
+После первой публикации сайт будет доступен по адресу `https://farakshin.github.io/cashkhak_web/`.
