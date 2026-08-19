@@ -1,0 +1,8 @@
+---
+import Layout from "../../components/Layout.astro";
+import { termsSectionsEn } from "../../data/site-en";
+---
+<Layout lang="en" title="Terms of use" currentPath="/en/terms.html">
+  <section class="page-hero section-shell"><div class="shell narrow-shell"><p class="eyebrow"><span class="eyebrow-dot"></span> Cashkhak</p><h1>Terms<br /><em>of use.</em></h1><p class="page-lede">Last updated: August 19, 2026</p></div></section>
+  <section class="section-shell page-content"><div class="shell legal-shell"><p class="legal-intro">By using Cashkhak, you accept these terms. They explain the purpose of the app and important limitations when using cashback information.</p>{termsSectionsEn.map((section, index) => <section class="legal-section"><span class="legal-number">0{index + 1}</span><div><h2>{section.title}</h2>{section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</div></section>)}</div></section>
+</Layout>

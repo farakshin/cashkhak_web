@@ -68,3 +68,37 @@ export const privacySectionsEn = [
     paragraphs: ["For privacy questions, email farakshin@gmail.com."]
   }
 ];
+
+export const termsSectionsEn = [
+  {
+    title: "About the app",
+    paragraphs: [
+      "Cashkhak is a reference app for keeping track of cashback categories and rates on bank cards. It helps users store and compare the information they add themselves."
+    ]
+  },
+  {
+    title: "No financial advice",
+    paragraphs: [
+      "Information in Cashkhak is for reference only and is not financial, investment or legal advice. The app does not represent banks and does not determine the terms of their loyalty programs.",
+      "Before making a purchase, check the current categories, MCC codes, limits and other conditions in your bank's official app or documents."
+    ]
+  },
+  {
+    title: "Your data and responsibility",
+    paragraphs: [
+      "You are responsible for the information you add and for using the app. Do not include information in notes, card names or screenshots that you would not want included in a device backup.",
+      "Cashkhak does not store banking credentials, process payments or access a user's accounts."
+    ]
+  },
+  {
+    title: "Availability and changes",
+    paragraphs: [
+      "We may update the app, its features and these terms. By continuing to use Cashkhak after a new version of the terms is published, you accept the updated version.",
+      "The app is provided as available. We do not guarantee that information entered by a user always matches a bank's current terms."
+    ]
+  },
+  {
+    title: "Contact",
+    paragraphs: ["For questions about these terms, email farakshin@gmail.com."]
+  }
+];

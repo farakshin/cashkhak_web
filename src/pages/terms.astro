@@ -1,0 +1,8 @@
+---
+import Layout from "../components/Layout.astro";
+import { termsSections } from "../data/site";
+---
+<Layout title="Условия использования" currentPath="/terms.html">
+  <section class="page-hero section-shell"><div class="shell narrow-shell"><p class="eyebrow"><span class="eyebrow-dot"></span> Кэшхак</p><h1>Условия<br /><em>использования.</em></h1><p class="page-lede">Последнее обновление: 19 августа 2026 года</p></div></section>
+  <section class="section-shell page-content"><div class="shell legal-shell"><p class="legal-intro">Используя Кэшхак, вы принимаете эти условия. Они объясняют назначение приложения и важные ограничения при работе с данными о кэшбэке.</p>{termsSections.map((section, index) => <section class="legal-section"><span class="legal-number">0{index + 1}</span><div><h2>{section.title}</h2>{section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</div></section>)}</div></section>
+</Layout>
