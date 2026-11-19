@@ -3,7 +3,7 @@ export const site = {
   shortName: "Кэшхак",
   description: "Кэшхак — Кэшбэк по всем картам",
   supportEmail: "farakshin@gmail.com",
-  appStoreUrl: "#download"
+  appStoreUrl: "https://apps.apple.com/app/id6802810869"
 };
 
 export const nav = {

@@ -1,5 +1,5 @@
 ---
-import { nav } from "../data/site";
+import { nav, site } from "../data/site";
 import { withBase } from "../lib/paths";
 
 interface Props {
@@ -28,8 +28,8 @@ const languageHref = withBase(languagePath);
     </nav>
     <div class="header-actions">
       <a class="language-link" href={languageHref}>{lang === "ru" ? "EN" : "RU"}</a>
-      <a class="button button-small button-dark header-cta" href={withBase(lang === "ru" ? "/#download" : "/en/#download")}>
-        {lang === "ru" ? "Скоро в App Store" : "Coming to App Store"}
+      <a class="button button-small button-dark header-cta" href={site.appStoreUrl}>
+        {lang === "ru" ? "Скачать в App Store" : "Download on the App Store"}
       </a>
     </div>
   </div>
