@@ -64,6 +64,13 @@ export const privacySectionsEn = [
     ]
   },
   {
+    title: "Website analytics",
+    paragraphs: [
+      "If you allow analytics, this website uses Google Analytics to measure page views and clicks on App Store links. Google receives information about your visit and may use analytics cookies. Card and cashback data from the app is not sent to website analytics.",
+      "You can change your choice under Analytics settings at the bottom of any page."
+    ]
+  },
+  {
     title: "Contact",
     paragraphs: ["For privacy questions, email farakshin@gmail.com."]
   }

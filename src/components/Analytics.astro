@@ -1,0 +1,132 @@
+---
+import { site } from "../data/site";
+import { withBase } from "../lib/paths";
+
+const { lang } = Astro.props as { lang: "ru" | "en" };
+const isRu = lang === "ru";
+const measurementId = "G-HE5C7VV1RF";
+const appStoreUrl = site.appStoreUrl;
+const cookiePath = withBase("/");
+const privacyUrl = withBase(isRu ? "/privacy.html" : "/en/privacy.html");
+---
+
+<section class="shell analytics-settings" id="website-analytics" hidden>
+  <details>
+    <summary>{isRu ? "Настройки аналитики" : "Analytics settings"}</summary>
+    <p>
+      {isRu
+        ? "С вашего согласия Google Analytics измеряет просмотры страниц и клики по ссылкам в App Store."
+        : "With your permission, Google Analytics measures page views and clicks on App Store links."}
+      <a href={privacyUrl}>{isRu ? "Политика конфиденциальности" : "Privacy policy"}</a>
+    </p>
+    <div class="analytics-actions">
+      <button type="button" data-choice="yes">{isRu ? "Разрешить" : "Allow analytics"}</button>
+      <button type="button" data-choice="no">{isRu ? "Отключить" : "Disable analytics"}</button>
+    </div>
+  </details>
+</section>
+
+<script define:vars={{ measurementId, appStoreUrl, cookiePath }}>
+  const settings = document.getElementById("website-analytics");
+  const details = settings.querySelector("details");
+  const allow = settings.querySelector('[data-choice="yes"]');
+  const deny = settings.querySelector('[data-choice="no"]');
+  const preferenceKey = "cashkhak-web-analytics";
+  const disableKey = "ga-disable-" + measurementId;
+
+  let choice;
+  try {
+    choice = localStorage.getItem(preferenceKey);
+  } catch {
+    // Without persistent storage, the choice applies to this page only.
+  }
+
+  let started = false;
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+
+  function enableAnalytics() {
+    window[disableKey] = false;
+    if (started) return;
+    started = true;
+    window.dataLayer = window.dataLayer || [];
+    gtag("js", new Date());
+    gtag("config", measurementId, {
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
+      cookie_path: cookiePath
+    });
+    const tag = document.createElement("script");
+    tag.async = true;
+    tag.src = "https://www.googletagmanager.com/gtag/js?id=" + measurementId;
+    document.head.append(tag);
+  }
+
+  function applyChoice() {
+    window[disableKey] = choice !== "yes";
+    allow.disabled = choice === "yes";
+    deny.disabled = choice === "no";
+    if (choice === "yes") enableAnalytics();
+  }
+
+  function choose(next) {
+    const wasEnabled = choice === "yes";
+    choice = next;
+    try {
+      localStorage.setItem(preferenceKey, choice);
+    } catch {
+      // The in-memory choice still controls analytics on this page.
+    }
+    applyChoice();
+
+    if (wasEnabled && choice === "no") {
+      for (const name of ["_ga", "_ga_" + measurementId.slice(2)]) {
+        const expired = name + "=; Max-Age=0; Path=" + cookiePath + "; Secure";
+        document.cookie = expired;
+        document.cookie = expired + "; Domain=" + location.hostname;
+      }
+    }
+  }
+
+  function trackAppStoreClick(event) {
+    if (choice !== "yes") return;
+    if (event.type === "auxclick" && event.button !== 1) return;
+    const link = event.target instanceof Element && event.target.closest("a[href]");
+    if (link && link.href === appStoreUrl) {
+      gtag("event", "app_store_click", { send_to: measurementId });
+    }
+  }
+
+  allow.addEventListener("click", () => choose("yes"));
+  deny.addEventListener("click", () => choose("no"));
+  document.addEventListener("click", trackAppStoreClick);
+  document.addEventListener("auxclick", trackAppStoreClick);
+  window.addEventListener("storage", (event) => {
+    if (event.key === preferenceKey) {
+      choice = event.newValue;
+      applyChoice();
+    }
+  });
+  details.open = choice !== "yes" && choice !== "no";
+  settings.hidden = false;
+  applyChoice();
+</script>
+
+<style>
+  .analytics-settings { padding-bottom: 2rem; color: var(--muted); font-size: .875rem; }
+  summary { width: fit-content; cursor: pointer; }
+  p { margin: .5rem 0; }
+  a { text-decoration: underline; text-underline-offset: .2em; }
+  .analytics-actions { display: flex; gap: .5rem; flex-wrap: wrap; }
+  button {
+    border: 1px solid var(--line);
+    border-radius: .5rem;
+    padding: .4rem .75rem;
+    background: var(--paper);
+    color: var(--ink);
+    font: inherit;
+    cursor: pointer;
+  }
+  button:disabled { opacity: .6; cursor: default; }
+</style>

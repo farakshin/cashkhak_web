@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Analytics from "./Analytics.astro";
 import Header from "./Header.astro";
 import Footer from "./Footer.astro";
 import { site } from "../data/site";
@@ -36,5 +37,6 @@ const canonicalTitle = title === site.name ? title : `${title} — ${site.name}`
       <slot />
     </main>
     <Footer lang={lang} />
+    <Analytics lang={lang} />
   </body>
 </html>
